@@ -22,6 +22,9 @@ yargs.command({
 yargs.command({
   command: "create",
   builder: {
+    id: {
+      type: "string",
+    },
     title: {
       type: "string",
     },
@@ -30,8 +33,8 @@ yargs.command({
     },
   },
   handler: (args) => {
-    const { title, description } = args;
-    const newTask = createTask(title, description);
+    const {id, title, description } = args;
+    const newTask = createTask(id,title, description);
     console.log(clc.green("Task created successfully:"), newTask);
   },
 });

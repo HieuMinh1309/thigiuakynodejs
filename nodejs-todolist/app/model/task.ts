@@ -13,9 +13,9 @@ const readAllTask = (): Task[] => {
   return taskJson;
 };
 
-const createTask = (title: string, description: string): Task => {
+const createTask = (id: string, title: string, description: string): Task => {
   const newTask: Task = {
-    id: Math.random().toString(),
+    id,
     title,
     description,
   };
